@@ -7,7 +7,6 @@ call vundle#begin('~/.vim/plugged')
 " Let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'SWilson4/valerie'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
 Plugin 'preservim/tagbar'
@@ -30,7 +29,6 @@ set splitbelow         " Always split below
 set mouse=a            " Enable mouse drag on window splits
 set ai
 set ruler
-colorscheme valerie
 let g:AutoPairsShortcutToggle = '<C-P>'
 let NERDTreeShowBookmarks = 1   " Show the bookmarks table
 let NERDTreeShowHidden = 1      " Show hidden files
