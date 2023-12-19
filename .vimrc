@@ -12,7 +12,16 @@ Plugin 'preservim/nerdtree'
 Plugin 'preservim/tagbar'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'derekwyatt/vim-fswitch'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'haishanh/night-owl.vim'
+Plugin 'rhysd/vim-clang-format'
 call vundle#end()
+let g:clang_format#auto_format=1
+if (has("termguicolors"))
+    set termguicolors
+endif
+syntax enable
+colorscheme night-owl
 filetype plugin indent on
 set nu     " Enable line numbers
 syntax on  " Enable syntax highlighting
