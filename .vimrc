@@ -3,7 +3,7 @@ set nocompatible
 "================================================================================
 "PLUGINS=========================================================================
 "================================================================================
-"
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
 Plugin 'VundleVim/Vundle.vim'
@@ -15,6 +15,8 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
 Plugin 'preservim/tagbar'
 Plugin 'dyng/ctrlsf.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'tpope/vim-obsession'
 
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
@@ -42,11 +44,20 @@ set ruler
 set exrc
 set secure
 
-" Make sure Ctrl+PageUp still works for terminal mode
-tnoremap <C-PageUp> <C-\><C-n>:tabnext<cr>
-tnoremap <C-PageDown> <C-\><C-n>:tabprevious<cr>
-" Remember to reset mode since we changed it when leaving the tab
+"Tabbing shortcuts
+nnoremap <C-n> :tabnext<cr>
+nnoremap <C-b> :tabprevious<cr>
+"Make sure Ctrl+PageUp still works for terminal mode
+tnoremap <C-n> <C-\><C-n>:tabnext<cr>
+tnoremap <C-b> <C-\><C-n>:tabprevious<cr>
+"Remember to reset mode since we changed it when leaving the tab
 autocmd BufWinEnter,WinEnter * if &buftype == 'terminal' | silent! normal i | endif
+
+"Windowing shortcuts
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
 
 "================================================================================
 "PLUGIN SETTINGS=================================================================
