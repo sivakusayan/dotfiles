@@ -17,10 +17,17 @@ Plugin 'preservim/tagbar'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-obsession'
+Plugin 'ycm-core/YouCompleteMe'
 
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'rhysd/vim-clang-format'
+
+"JavaScript Plugins
+Plugin 'prettier/vim-prettier'
+
+"Go Plugins
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -45,11 +52,11 @@ set exrc
 set secure
 
 "Tabbing shortcuts
-nnoremap <C-n> :tabnext<cr>
-nnoremap <C-b> :tabprevious<cr>
+nnoremap <C-p> :tabnext<cr>
+nnoremap <C-o> :tabprevious<cr>
 "Make sure Ctrl+PageUp still works for terminal mode
-tnoremap <C-n> <C-\><C-n>:tabnext<cr>
-tnoremap <C-b> <C-\><C-n>:tabprevious<cr>
+tnoremap <C-p> <C-\><C-n>:tabnext<cr>
+tnoremap <C-o> <C-\><C-n>:tabprevious<cr>
 "Remember to reset mode since we changed it when leaving the tab
 autocmd BufWinEnter,WinEnter * if &buftype == 'terminal' | silent! normal i | endif
 
@@ -97,12 +104,13 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-"AutoPairs
-let g:AutoPairsShortcutToggle = '<C-P>'
-
 "Vim-Fswitch
 au! BufEnter *.cpp let b:fswitchdst = 'h,hpp'
 au! BufEnter *.cc let b:fswitchdst = 'h,hpp'
 au! BufEnter *.hpp let b:fswitchdst = 'cpp,cc,c'
 au! BufEnter *.h let b:fswitchdst = 'cpp,cc,c'
 nmap <C-Z> :vsplit <bar> :wincmd l <bar> :FSRight<CR>
+
+"vim-go
+autocmd FileType go nmap <C-b>  <Plug>(go-build)
+autocmd FileType go nmap <C-g>  <Plug>(go-run)
