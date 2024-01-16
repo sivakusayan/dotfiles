@@ -44,7 +44,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set incsearch
-set hlsearch
 set splitbelow
 set ai
 set ruler
