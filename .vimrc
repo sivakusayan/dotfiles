@@ -118,3 +118,9 @@ let g:go_fmt_command = "golines"
 
 "YCM
 map <F8> :YcmCompleter FixIt<CR>
+
+"vim-llvm
+augroup filetype
+  au! BufRead,BufNewFile *.ll     set filetype=llvm
+  au! BufRead,BufNewFile *.llx    set filetype=llvm
+augroup END
