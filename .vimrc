@@ -115,3 +115,6 @@ nmap <C-Z> :vsplit <bar> :wincmd l <bar> :FSRight<CR>
 autocmd FileType go nmap <C-b>  <Plug>(go-build)
 autocmd FileType go nmap <C-g>  <Plug>(go-run)
 let g:go_fmt_command = "golines"
+
+"YCM
+map <F8> :YcmCompleter FixIt<CR>
