@@ -66,6 +66,8 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-n> :set invrelativenumber<CR>
 
+let mapleader = "\\"
+
 "================================================================================
 "PLUGIN SETTINGS=================================================================
 "================================================================================
@@ -117,7 +119,10 @@ autocmd FileType go nmap <C-g>  <Plug>(go-run)
 let g:go_fmt_command = "golines"
 
 "YCM
-map <F8> :YcmCompleter FixIt<CR>
+noremap <leader>f :YcmCompleter FixIt<CR>
+noremap <leader>n :lnext<CR>
+noremap <leader>N :lprev<CR>
+let g:ycm_always_populate_location_list = 1
 
 "vim-llvm
 augroup filetype
