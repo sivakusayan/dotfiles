@@ -22,6 +22,7 @@ Plugin 'ycm-core/YouCompleteMe'
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'vim-scripts/DoxygenToolkit.vim'
 
 "JavaScript Plugins
 Plugin 'prettier/vim-prettier'
