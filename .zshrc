@@ -8,3 +8,5 @@ alias bb=/Users/sayansivakumaran/Development/depot_tools/bb
 alias bbs=/opt/homebrew/bin/bb
 alias grep="ggrep -n -P --color=always"
 alias clang++="clang++ -std=c++20"
+export ASAN_OPTIONS=abort_on_error=1:halt_on_error=1
+export UBSAN_OPTIONS=abort_on_error=1:halt_on_error=1
