@@ -10,3 +10,4 @@ alias grep="ggrep -n -P --color=always"
 alias clang++="clang++ -std=c++20"
 export ASAN_OPTIONS=abort_on_error=1:halt_on_error=1
 export UBSAN_OPTIONS=abort_on_error=1:halt_on_error=1
+export LSAN_OPTIONS=verbosity=1:log_threads=1
