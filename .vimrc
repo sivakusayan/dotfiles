@@ -18,6 +18,7 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-obsession'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
@@ -29,6 +30,12 @@ Plugin 'prettier/vim-prettier'
 
 "Go Plugins
 Plugin 'fatih/vim-go'
+
+"Clojure Plugins
+Plugin 'guns/vim-sexp'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'venantius/vim-cljfmt'
 
 call vundle#end()
 
