@@ -103,12 +103,6 @@ let NERDTreeWinPos = 'left'     " Panel opens on the left side
 let NERDTreeWinSize = 31        " Set panel width to 31 columns
 nmap <F2> :NERDTreeToggle<CR>
 
-"Tagbar
-nmap <F3> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_autoshowtag = 1
-let g:tagbar_position = 'botright vertical'
-
 "CtrlSF
 let g:ctrlsf_backend = 'ack'
 let g:ctrlsf_auto_close = { "normal":0, "compact":0 }
