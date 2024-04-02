@@ -34,6 +34,8 @@ Plugin 'fatih/vim-go'
 "Clojure Plugins
 Plugin 'guns/vim-sexp'
 Plugin 'guns/vim-clojure-static'
+"This is a fork since guns's repo is broken with fireplace 2.0
+Plugin 'brandonvin/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
 Plugin 'venantius/vim-cljfmt'
 
@@ -75,6 +77,15 @@ nnoremap <C-l> <C-W>l
 nnoremap <C-n> :set invrelativenumber<CR>
 
 let mapleader = "\\"
+
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set ttimeout ttimeoutlen=50
 
 "================================================================================
 "PLUGIN SETTINGS=================================================================

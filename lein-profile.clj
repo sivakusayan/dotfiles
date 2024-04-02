@@ -1,1 +1,1 @@
-{:user {:repl-options {:init (require 'cljfmt.core')}}}
+{:user {:repl-options {:init (require 'cljfmt.core)}}}
