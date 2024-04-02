@@ -13,7 +13,6 @@ Plugin 'haishanh/night-owl.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
-Plugin 'preservim/tagbar'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-obsession'
@@ -77,6 +76,9 @@ nnoremap <C-l> <C-W>l
 nnoremap <C-n> :set invrelativenumber<CR>
 
 let mapleader = "\\"
+
+"Auto generate tags file on file write of *.c and *.h files
+autocmd BufWritePost *.c,*.h silent! !ctags . &
 
 "Hack to get meta key to work in gnome terminal
 let c='a'
