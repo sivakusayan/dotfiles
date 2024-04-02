@@ -78,6 +78,7 @@ nnoremap <C-n> :set invrelativenumber<CR>
 
 let mapleader = "\\"
 
+"Hack to get meta key to work in gnome terminal
 let c='a'
 while c <= 'z'
   exec "set <A-".c.">=\e".c
