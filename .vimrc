@@ -9,7 +9,7 @@ call vundle#begin('~/.vim/plugged')
 Plugin 'VundleVim/Vundle.vim'
 
 "General Plugins
-Plugin 'haishanh/night-owl.vim'
+Plugin 'sainnhe/everforest'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
@@ -45,8 +45,13 @@ call vundle#end()
 "================================================================================
 
 syntax on
-colorscheme night-owl
 filetype plugin indent on
+
+set background=dark
+set termguicolors
+let g:everforest_background = 'hard'
+let g:everforest_colors_override = {'bg0': ['#121517', '234']}
+colorscheme everforest
 
 set nu 
 set tabstop=4
@@ -87,8 +92,16 @@ while c <= 'z'
   exec "imap \e".c." <A-".c.">"
   let c = nr2char(1+char2nr(c))
 endw
-
 set ttimeout ttimeoutlen=50
+
+if has("gui_running")
+  " Maximize gvim window
+  set lines=999 columns=999
+  set guioptions -=m
+  set guioptions -=T
+  set guioptions -=L
+  set guioptions -=r
+endif
 
 "================================================================================
 "PLUGIN SETTINGS=================================================================
