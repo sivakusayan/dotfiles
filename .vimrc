@@ -18,6 +18,8 @@ Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-obsession'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
