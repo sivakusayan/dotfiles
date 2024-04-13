@@ -20,6 +20,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/goyo.vim'
 
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
