@@ -161,3 +161,6 @@ augroup filetype
   au! BufRead,BufNewFile *.ll     set filetype=llvm
   au! BufRead,BufNewFile *.llx    set filetype=llvm
 augroup END
+
+"fzf
+noremap <leader>s :GFiles<CR>
