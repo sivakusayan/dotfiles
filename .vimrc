@@ -19,7 +19,6 @@ Plugin 'tpope/vim-obsession'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/goyo.vim'
 
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
@@ -104,6 +103,12 @@ if has("gui_running")
   set guioptions -=L
   set guioptions -=r
 endif
+
+nnoremap y "+y
+vnoremap y "+y
+nnoremap d "+d
+vnoremap d "+d
+nnoremap p "+p
 
 "================================================================================
 "PLUGIN SETTINGS=================================================================
