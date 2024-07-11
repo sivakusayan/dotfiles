@@ -104,6 +104,13 @@ if has("gui_running")
   set guioptions -=r
 endif
 
+"Define grep command
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.fzf#shellescape(<q-args>),
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+"Sync vim clipboard with system clipboard
 nnoremap y "+y
 vnoremap y "+y
 nnoremap d "+d
@@ -168,3 +175,5 @@ augroup END
 
 "fzf
 noremap <leader>s :GFiles<CR>
+noremap <leader>g :GGrep<CR>
+let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . ' --bind "ctrl-a:select-all,ctrl-d:deselect-all"'
