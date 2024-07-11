@@ -118,7 +118,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/sayan/Applications/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Applications/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #TODO: ORGANIZE THIS LATER
 export PATH="$PATH:/home/sayan/.local/bin"
