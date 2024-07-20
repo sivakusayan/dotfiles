@@ -14,10 +14,12 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
 Plugin 'mhinz/vim-startify'
+Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'psliwka/vim-smoothie'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+runtime! ftplugin/man.vim
 
 "HTML/CSS/JavaScript Plugins
 Plugin 'mattn/emmet-vim'
@@ -29,6 +31,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'vim-utils/vim-man.git'
 
 "Go Plugins
 Plugin 'fatih/vim-go'
@@ -109,6 +112,7 @@ if has("gui_running")
   set guioptions -=T
   set guioptions -=L
   set guioptions -=r
+  set guioptions +=!
 endif
 
 "Define grep command
@@ -135,6 +139,7 @@ let NERDTreeShowLineNumbers = 0 " Hide line numbers
 let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
 let NERDTreeWinPos = 'left'     " Panel opens on the left side
 let NERDTreeWinSize = 31        " Set panel width to 31 columns
+let NERDTreeStatusline = '%#NonText#'
 nmap <F2> :NERDTreeToggle<CR>
 
 "Vim-AutoPairs
@@ -158,6 +163,8 @@ noremap <leader>f :YcmCompleter FixIt<CR>
 noremap <leader>n :lnext<CR>
 noremap <leader>N :lprev<CR>
 let g:ycm_always_populate_location_list = 1
+let g:ycm_auto_hover=''
+nmap K <plug>(YCMHover)
 
 "vim-llvm
 augroup filetype
@@ -182,3 +189,30 @@ let g:closetag_filetypes = 'html'
 let g:smoothie_update_interval = 10
 let g:smoothie_speed_constant_factor = 20
 let g:smoothie_speed_linear_factor = 20
+
+"vim-lightline
+function! LightlineMode()
+  return expand('%:t') =~# '^__Tagbar__' ? 'Tagbar':
+        \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
+        \ &filetype ==# 'man' ? '' :
+        \ lightline#mode()
+endfunction
+set laststatus=2
+let g:lightline = {
+      \ 'component_function': {
+      \   'mode': 'LightlineMode',
+      \ },
+      \ 'mode_map': {
+        \ 'n' : 'N',
+        \ 'i' : 'I',
+        \ 'R' : 'R',
+        \ 'v' : 'V',
+        \ 'V' : 'VL',
+        \ "\<C-v>": 'VB',
+        \ 'c' : 'C',
+        \ 's' : 'S',
+        \ 'S' : 'SL',
+        \ "\<C-s>": 'SB',
+        \ 't': 'T',
+        \ },
+      \ }
