@@ -13,20 +13,22 @@ Plugin 'sainnhe/everforest'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
-Plugin 'dyng/ctrlsf.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-obsession'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
+"HTML/CSS/JavaScript Plugins
+Plugin 'mattn/emmet-vim'
+Plugin 'prettier/vim-prettier'
+Plugin 'alvan/vim-closetag'
+Plugin 'ap/vim-css-color'
+
 "C/C++ Plugins
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-
-"JavaScript Plugins
-Plugin 'prettier/vim-prettier'
 
 "Go Plugins
 Plugin 'fatih/vim-go'
@@ -81,6 +83,11 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-n> :set invrelativenumber<CR>
 
+"QuickList Shortcuts
+"
+nnoremap <M-o> :cp<cr>
+nnoremap <M-p> :cn<cr>
+
 let mapleader = "\\"
 
 "Auto generate tags file on file write of *.c and *.h files
@@ -130,24 +137,9 @@ let NERDTreeWinPos = 'left'     " Panel opens on the left side
 let NERDTreeWinSize = 31        " Set panel width to 31 columns
 nmap <F2> :NERDTreeToggle<CR>
 
-"CtrlSF
-let g:ctrlsf_backend = 'ack'
-let g:ctrlsf_auto_close = { "normal":0, "compact":0 }
-let g:ctrlsf_auto_focus = { "at":"start" }
-let g:ctrlsf_auto_preview = 0
-let g:ctrlsf_case_sensitive = 'smart'
-let g:ctrlsf_default_view = 'normal'
-let g:ctrlsf_regex_pattern = 0
-let g:ctrlsf_position = 'right'
-let g:ctrlsf_winsize = '46'
-let g:ctrlsf_default_root = 'cwd'
-nmap <C-F>f <Plug>CtrlSFPrompt
-xmap <C-F>f <Plug>CtrlSFVwordPath
-xmap <C-F>F <Plug>CtrlSFVwordExec
-nmap <C-F>n <Plug>CtrlSFCwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+"Vim-AutoPairs
+"Free the M-p combination for our own usage.
+let g:AutoPairsShortcutToggle = ''
 
 "Vim-Fswitch
 au! BufEnter *.cpp let b:fswitchdst = 'h,hpp'
@@ -177,3 +169,11 @@ augroup END
 noremap <leader>s :GFiles<CR>
 noremap <leader>g :GGrep<CR>
 let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . ' --bind "ctrl-a:select-all,ctrl-d:deselect-all"'
+
+"vim-emmet
+let g:user_emmet_leader_key='<C-,>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+"vim-closetag
+let g:closetag_filetypes = 'html'
