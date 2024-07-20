@@ -15,6 +15,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
 Plugin 'mhinz/vim-startify'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'psliwka/vim-smoothie'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
@@ -176,3 +177,8 @@ autocmd FileType html,css EmmetInstall
 
 "vim-closetag
 let g:closetag_filetypes = 'html'
+
+"vim-smoothie
+let g:smoothie_update_interval = 10
+let g:smoothie_speed_constant_factor = 20
+let g:smoothie_speed_linear_factor = 20
