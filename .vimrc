@@ -14,7 +14,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
 Plugin 'mhinz/vim-startify'
-Plugin 'tpope/vim-obsession'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -129,7 +128,7 @@ nnoremap p "+p
 "================================================================================
 
 "NERDTree
-let NERDTreeShowBookmarks = 1   " Show the bookmarks table
+let NERDTreeShowBookmarks = 0   " Hide the bookmarks table
 let NERDTreeShowHidden = 1      " Show hidden files
 let NERDTreeShowLineNumbers = 0 " Hide line numbers
 let NERDTreeMinimalMenu = 1     " Use the minimal menu (m)
