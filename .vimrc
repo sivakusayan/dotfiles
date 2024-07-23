@@ -14,7 +14,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'preservim/nerdtree'
 Plugin 'mhinz/vim-startify'
-Plugin 'itchyny/lightline.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'psliwka/vim-smoothie'
 Plugin 'junegunn/fzf'
@@ -189,30 +188,3 @@ let g:closetag_filetypes = 'html'
 let g:smoothie_update_interval = 10
 let g:smoothie_speed_constant_factor = 20
 let g:smoothie_speed_linear_factor = 20
-
-"vim-lightline
-function! LightlineMode()
-  return expand('%:t') =~# '^__Tagbar__' ? 'Tagbar':
-        \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
-        \ &filetype ==# 'man' ? '' :
-        \ lightline#mode()
-endfunction
-set laststatus=2
-let g:lightline = {
-      \ 'component_function': {
-      \   'mode': 'LightlineMode',
-      \ },
-      \ 'mode_map': {
-        \ 'n' : 'N',
-        \ 'i' : 'I',
-        \ 'R' : 'R',
-        \ 'v' : 'V',
-        \ 'V' : 'VL',
-        \ "\<C-v>": 'VB',
-        \ 'c' : 'C',
-        \ 's' : 'S',
-        \ 'S' : 'SL',
-        \ "\<C-s>": 'SB',
-        \ 't': 'T',
-        \ },
-      \ }
