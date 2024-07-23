@@ -113,7 +113,6 @@ if has("gui_running")
   set guioptions -=L
   set guioptions -=r
   set guioptions +=!
-  "set guifont=Gohu\ GohuFont\ Medium\ 10
 endif
 
 "Define grep command
