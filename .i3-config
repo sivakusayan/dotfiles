@@ -135,27 +135,27 @@ set $ws10 "10"
 
 # switch to workspace
 bindsym Mod1+1 workspace "Primary" 
-bindsym Mod1+2 workspace "Friends" 
-bindsym Mod1+3 workspace "Work" 
-bindsym Mod1+4 workspace number $ws4
-bindsym Mod1+5 workspace number $ws5
-bindsym Mod1+6 workspace number $ws6
-bindsym Mod1+7 workspace number $ws7
-bindsym Mod1+8 workspace number $ws8
-bindsym Mod1+9 workspace number $ws9
-bindsym Mod1+0 workspace number $ws10
+bindsym Mod1+grave workspace "Friends" 
+bindsym Mod1+2 workspace "Work" 
+bindsym Mod1+3 workspace number $ws4
+bindsym Mod1+4 workspace number $ws5
+bindsym Mod1+5 workspace number $ws6
+bindsym Mod1+6 workspace number $ws7
+bindsym Mod1+7 workspace number $ws8
+bindsym Mod1+8 workspace number $ws9
+bindsym Mod1+9 workspace number $ws10
 
 # move focused container to workspace
 bindsym Mod1+Shift+1 move container to workspace "Primary" 
-bindsym Mod1+Shift+2 move container to workspace "Friends" 
-bindsym Mod1+Shift+3 move container to workspace "Work" 
-bindsym Mod1+Shift+4 move container to workspace number $ws4
-bindsym Mod1+Shift+5 move container to workspace number $ws5
-bindsym Mod1+Shift+6 move container to workspace number $ws6
-bindsym Mod1+Shift+7 move container to workspace number $ws7
-bindsym Mod1+Shift+8 move container to workspace number $ws8
-bindsym Mod1+Shift+9 move container to workspace number $ws9
-bindsym Mod1+Shift+0 move container to workspace number $ws10
+bindsym Mod1+Shift+grave move container to workspace "Friends" 
+bindsym Mod1+Shift+2 move container to workspace "Work" 
+bindsym Mod1+Shift+3 move container to workspace number $ws4
+bindsym Mod1+Shift+4 move container to workspace number $ws5
+bindsym Mod1+Shift+5 move container to workspace number $ws6
+bindsym Mod1+Shift+6 move container to workspace number $ws7
+bindsym Mod1+Shift+7 move container to workspace number $ws8
+bindsym Mod1+Shift+8 move container to workspace number $ws9
+bindsym Mod1+Shift+9 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym Mod1+Shift+c reload
@@ -191,26 +191,21 @@ mode "resize" {
 
 bindsym Mod1+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
-
 # =========================================================
 # CUSTOM SETUP 
 # =========================================================
 
-# Setup multiple monitors properly
-exec --no-startup-id xrandr --output HDMI-0 --rotate left --pos 0x0 --output DP-0 --pos 1440x855
-# Start compositor
+# Startup scripts
+exec --no-startup-id xrandr --output HDMI-0 --rotate left --pos 0x0 --output DP-0 --pos 1440x855 --primary
 exec --no-startup-id picom --experimental-backends --backend glx --config ~/.config/picom/picom.conf -b
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/anime-pink.jpg
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/anime-pink-dark.png
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Styling
-default_border pixel 5
-default_floating_border pixel 5
+default_border pixel 0
+default_floating_border pixel 0
 gaps inner 20
+gaps top 60 
 
 # Automatically assign certain applications to a workspace
 assign [class="(?i)gvim"] "Work"
