@@ -112,6 +112,7 @@ if has("gui_running")
   set guioptions -=L
   set guioptions -=r
   set guioptions +=!
+  set guioptions -=e
 endif
 
 "Define grep command
