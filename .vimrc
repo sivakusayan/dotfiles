@@ -113,6 +113,7 @@ if has("gui_running")
   set guioptions -=r
   set guioptions +=!
   set guioptions -=e
+  set guifont = "Ubuntu Mono NerdFont"
 endif
 
 "Define grep command
