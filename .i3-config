@@ -54,6 +54,9 @@ bindsym Mod4+Return exec i3-sensible-terminal
 # kill focused window
 bindsym Mod4+Shift+q kill
 
+# Print screen and save to clipboard
+bindsym Print exec maim -s -u | xclip -selection clipboard -t image/png -i
+
 # start rofi (a program launcher)
 bindsym Mod4+space exec --no-startup-id ~/.config/rofi/drun_launch 
 bindsym Mod4+w exec --no-startup-id ~/.config/rofi/window_launch 
