@@ -1,0 +1,8 @@
+import os
+exec(open(os.path.expanduser("~/.pdbrc.py")).read())
+
+alias n next ;; list_restore_lastcmd .
+alias s step ;; list_restore_lastcmd .
+alias u up ;; list_restore_lastcmd .
+alias d down ;; list_restore_lastcmd .
+alias r return ;; list_restore_lastcmd .
