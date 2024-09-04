@@ -128,7 +128,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 workspace $ws1 output primary
-workspace $ws2 output secondary
+workspace $ws2 output primary 
 workspace $ws3 output primary
 workspace $ws4 output primary
 
@@ -197,7 +197,7 @@ bindsym Mod4+r mode "resize"
 # Startup scripts
 exec --no-startup-id xrandr --output HDMI-0 --rotate left --pos 0x0 --output DP-0 --pos 1440x855 --primary
 exec --no-startup-id picom --experimental-backends --backend glx --config ~/.config/picom/picom.conf -b
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/main.png
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/Wallpapers/main.jpg
 exec --no-start-up-id wal -R
 exec_always --no-startup-id dunst
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
