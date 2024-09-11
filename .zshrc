@@ -143,5 +143,3 @@ alias pdb="python3 -m pdb"
 export ASAN_OPTIONS=abort_on_error=1:halt_on_error=1
 export UBSAN_OPTIONS=abort_on_error=1:halt_on_error=1
 # export LSAN_OPTIONS=verbosity=1:log_threads=1
-
-${${(A)=:-alpha crunch crunchbang-mini ghosts pacman hex-block rally-x panes rails square}[RANDOM%9+1]}

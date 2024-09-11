@@ -92,9 +92,6 @@ nnoremap <M-p> :cn<cr>
 
 let mapleader = "\\"
 
-"Auto generate tags file on file write of *.c and *.h files
-autocmd BufWritePost *.c,*.h silent! !ctags . &
-
 "Hack to get meta key to work in gnome terminal
 let c='a'
 while c <= 'z'
