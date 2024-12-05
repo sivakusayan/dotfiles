@@ -21,6 +21,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="simplerich"
 source "$HOME/Applications/simplerich-zsh-theme/zsh-git-prompt/zshrc.sh"
+# Specific flag for the simplerich ZSH theme to stop querying Git all the time
+export ZSH_THEME_GIT_PROMPT_CACHE=1
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -69,8 +71,10 @@ export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 alias sed="sed -i"
 # Rename alias to not conflict with `bb` utility during Chromium development
 alias bbs=/opt/homebrew/bin/bb
+alias bat="batcat"
 alias grep="grep -n -P --color=always"
 alias clang++="clang++ -std=c++20"
 alias ls="eza -g --icons"
 alias python="python3"
 alias pdb="python3 -m pdb"
+alias objdump="unbuffer objdump --disassembler-color=terminal --visualize-jumps=extended-color -M intel" 

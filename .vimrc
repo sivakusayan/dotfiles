@@ -51,6 +51,7 @@ call vundle#end()
 
 syntax on
 filetype plugin indent on
+set mouse=n
 
 set background=dark
 set termguicolors
@@ -72,21 +73,30 @@ set secure
 "Tabbing shortcuts
 nnoremap <C-p> :tabnext<cr>
 nnoremap <C-o> :tabprevious<cr>
-"Make sure Ctrl+PageUp still works for terminal mode
-tnoremap <C-p> <C-\><C-n>:tabnext<cr>
-tnoremap <C-o> <C-\><C-n>:tabprevious<cr>
-"Remember to reset mode since we changed it when leaving the tab
-autocmd BufWinEnter,WinEnter * if &buftype == 'terminal' | silent! normal i | endif
 
 "Windowing shortcuts
 nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+
+"Make sure Tabbing and Windowing still works for terminal mode
+tnoremap <C-p> <C-\><C-n>:tabnext<cr>
+tnoremap <C-o> <C-\><C-n>:tabprevious<cr>
+tnoremap <C-h> <C-\><C-n><C-W>h
+tnoremap <C-j> <C-\><C-n><C-W>j
+tnoremap <C-k> <C-\><C-n><C-W>k
+tnoremap <C-l> <C-\><C-n><C-W>l
+"Remember to reset mode since we changed it when leaving the tab
+autocmd BufWinEnter,WinEnter * if &buftype == 'terminal' | silent! normal i | endif
+"Turn off numbers when opening a terminal window
+autocmd TerminalOpen * setlocal nonumber norelativenumber
+
+"Turn on relative numbering by default
 nnoremap <C-n> :set invrelativenumber<CR>
+set invrelativenumber
 
 "QuickList Shortcuts
-"
 nnoremap <M-o> :cp<cr>
 nnoremap <M-p> :cn<cr>
 
