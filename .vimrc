@@ -38,10 +38,7 @@ Plugin 'fatih/vim-go'
 "Clojure Plugins
 Plugin 'guns/vim-sexp'
 Plugin 'guns/vim-clojure-static'
-"This is a fork since guns's repo is broken with fireplace 2.0
-Plugin 'brandonvin/vim-clojure-highlight'
 Plugin 'tpope/vim-fireplace'
-Plugin 'venantius/vim-cljfmt'
 
 call vundle#end()
 
@@ -123,12 +120,6 @@ if has("gui_running")
   set guifont = "Ubuntu Mono NerdFont"
 endif
 
-"Define grep command
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number -- '.fzf#shellescape(<q-args>),
-  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-
 "Sync vim clipboard with system clipboard
 nnoremap y "+y
 vnoremap y "+y
@@ -184,6 +175,19 @@ augroup END
 noremap <leader>s :GFiles<CR>
 noremap <leader>g :GGrep<CR>
 let $FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS . ' --bind "ctrl-a:select-all,ctrl-d:deselect-all"'
+
+"Add way to send fzf results to quickfix list with Ctrl+Q
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+endfunction
+let g:fzf_action = { 'ctrl-q': function('s:build_quickfix_list') }
+
+"Define grep command
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.fzf#shellescape(<q-args>),
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
 
 "vim-emmet
 let g:user_emmet_leader_key='<C-,>'

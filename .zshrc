@@ -71,10 +71,31 @@ export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 alias sed="sed -i"
 # Rename alias to not conflict with `bb` utility during Chromium development
 alias bbs=/opt/homebrew/bin/bb
-alias bat="batcat"
+alias bat="batcat --wrap=never"
 alias grep="grep -n -P --color=always"
 alias clang++="clang++ -std=c++20"
+alias dclang="~/Development/Repos/llvm-project/build/bin/clang"
+alias dclang++="~/Development/Repos/llvm-project/build/bin/clang++ -std=c++20"
 alias ls="eza -g --icons"
 alias python="python3"
 alias pdb="python3 -m pdb"
-alias objdump="unbuffer objdump --disassembler-color=terminal --visualize-jumps=extended-color -M intel" 
+alias objdump="unbuffer objdump --no-show-raw-insn --disassembler-color=terminal --visualize-jumps=extended-color -wC -M intel" 
+alias delta="delta -n --hunk-header-style=omit"
+alias perf-uipc="perf stat -e instructions:u,cycles:u"
+alias perf-ucache="perf stat -e L1-dcache-loads:u,L1-dcache-load-misses:u,l2_cache_accesses_from_dc_misses:u,l2_cache_misses_from_dc_misses:u"
+alias perf-cache="perf stat -e L1-dcache-loads,L1-dcache-load-misses,l2_cache_accesses_from_dc_misses,l2_cache_misses_from_dc_misses"
+
+# Save and restore working directory between sessions and new windows:
+# https://gist.github.com/jonleighton/1f0b96b49247a07dbaa30fbbe70b34f7
+function chpwd {
+  pwd > ~/.last_dir
+}
+
+# restore last saved path on launch
+if [[ -f ~/.last_dir ]]; then
+  cd $(cat ~/.last_dir)
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
