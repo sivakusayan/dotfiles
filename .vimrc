@@ -126,6 +126,11 @@ vnoremap y "+y
 nnoremap d "+d
 vnoremap d "+d
 nnoremap p "+p
+vnoremap p "+p
+
+"Redefine = to be move forward, to match behavior of -
+nnoremap = +
+vnoremap = +
 
 "================================================================================
 "PLUGIN SETTINGS=================================================================
