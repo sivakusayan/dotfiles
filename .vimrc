@@ -132,6 +132,9 @@ vnoremap p "+p
 nnoremap = +
 vnoremap = +
 
+"Remove trailing whitespace on writing to a codefile
+autocmd FileType c,cpp autocmd BufWritePre <buffer> %s/\s\+$//e
+
 "================================================================================
 "PLUGIN SETTINGS=================================================================
 "================================================================================
